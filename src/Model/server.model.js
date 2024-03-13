@@ -1,5 +1,6 @@
 const express = require('express');
 const router = require('../router/v1')
+const { conectDB } = require('../config/db')
 const { swaggerDocs: V1SwaggerDocs } = require('../docs/swagger');
 
 class Server {
@@ -9,7 +10,12 @@ class Server {
 
         this.midllewares();
         this.router();
+        this.conectarDB();
 
+    }
+
+    async conectarDB() {
+        await conectDB();
     }
 
     midllewares() {

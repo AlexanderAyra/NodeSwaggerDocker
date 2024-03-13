@@ -11,7 +11,7 @@ const options = {
                 'This is a simple CRUD API application made with Express and documented with Swagger'
         },
     },
-    apis: ['./src/router/v1/*.js'],
+    apis: ['src/docs/*.yml', './src/router/v1/*.js']
 }
 
 const swaggerSpec = swaggerJSDOC(options);
